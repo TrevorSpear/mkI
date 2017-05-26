@@ -2,6 +2,6 @@
 
 ## Files
 
-### Home
+### main
 Home page of the website
 

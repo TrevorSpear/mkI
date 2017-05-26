@@ -3,6 +3,7 @@
 
 *.DS_Store
 *.AppleDouble
+.idea/*
 
 # Object files
 *.o
