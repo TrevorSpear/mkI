@@ -1,6 +1,9 @@
 # Prerequisites
 *.d
 
+*.DS_Store
+*.AppleDouble
+
 # Object files
 *.o
 *.ko
