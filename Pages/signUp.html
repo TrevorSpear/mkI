@@ -5,7 +5,7 @@
     <title>mkI</title>
     <link rel="stylesheet" type="text/css" href="./../CSS/main.css">
 </head>
-<body>
+<body background="./../Pictures/signUp.jpg">
 
 
 <nav>
@@ -13,23 +13,29 @@
     </div>
 </nav>
 
+<br><br>
 
-<!--Welcome
+<h2 style="text-align: center;"><u>Welcome to Mark I: The Start</u></h2>
 
-//TopBar
-    //Sign Up
-        //First Name: _____________
-        //Last Name: ______________
-        //User Name: ______________
-        //Password: _______________
-        //Re-Password: ____________
-        //Email: __________________ <-------- Hoping to send a confirm but IDK how to do that
-    //Enter
 
-    //Once user finishes and we accept the new user then give them a cookie
+<div style="margin-left: 40%;width: 20%;text-align: center;border-style: solid;background: #ffffff">
+    <form method='POST'>
 
-//BottomBar-->
+        <br>
+        First Name <input type='text' name='FirstName' id='FirstName'> <br>
+        Last Name <input type='text' name='LastName' id='LastName'> <br>
+        <br>
+        User Name <input type='text' name='UserName' id='UserName'> <br>
+        Email     <input type='text' name='Email' id='Email'> <br>
+        <br>
+        Password <input type='password' name='PassWord' id='PassWord'> <br>
+        Password <input type='password' name='PassWord2' id='PassWord2'> <br>
+        <br>
 
+        <input type='submit' value='Sign Up' style="width:70px; height:32px; text-align:center;"/><br>
+        <br>
+    </form>
+</div>
 
 <!-- Calls the function for the Bars -->
 <script src="../Universal/Nav-Bottom-Bar.js">
