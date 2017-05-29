@@ -3,8 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <title>mkI</title>
+    <link rel="stylesheet" type="text/css" href="./../CSS/main.css">
 </head>
 <body>
+
+
+
+<!--NavBar-->
+<nav>
+    <div id="NavBar">
+    </div>
+</nav>
+
+<br><br>
+
+
+<h1>Games</h1>
+
+<br><br><br>
+<br><br><br>
+
+<div class="tab">
+    <button class="tablinks" onclick="openGame(event, 'RPS')">Rock/Paper/Scissors</button>
+    <button class="tablinks" onclick="openGame(event, 'Battleship')">Battleship</button>
+    <button class="tablinks" onclick="openGame(event, 'Wumpus')">Wumpus</button>
+</div>
+
 
 <!--TopBar/NavBar
 
@@ -21,9 +45,16 @@
         //If login then sends request to server to update score
 
 //End Game
-//End DivBox
+//End DivBox-->
 
 
-//BottomBar-->
+<!-- Calls the function for the Bars -->
+<script src="../Universal/Nav-Bottom-Bar.js">
+
+</script>
+
+
+<footer id="BottomBar">
+</footer>
 </body>
 </html>
