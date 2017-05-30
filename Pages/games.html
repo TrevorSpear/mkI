@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>mkI</title>
     <link rel="stylesheet" type="text/css" href="./../CSS/main.css">
+
 </head>
 <body>
 
@@ -20,38 +21,138 @@
 
 <h1>Games</h1>
 
-<br><br><br>
-<br><br><br>
-
 <div class="tab">
-    <button class="tablinks" onclick="openGame(event, 'RPS')">Rock/Paper/Scissors</button>
+    <button class="tablinks" onclick='openGame(event, "RPS")'>Rock/Paper/Scissors</button>
     <button class="tablinks" onclick="openGame(event, 'Battleship')">Battleship</button>
     <button class="tablinks" onclick="openGame(event, 'Wumpus')">Wumpus</button>
 </div>
 
+<div id="RPS" class="tabcontent">
+</div>
 
-<!--TopBar/NavBar
+<div id="Paris" class="tabcontent">
+    <h3>Paris</h3>
+    <p>Paris is the capital of France.</p>
+</div>
 
-//DivBox
-//Tabs- Games Names - alphabetical order / or when it was made.
-
-//Score of User - if login -
-
-//Grabs script of the game
-
-        //Game going on
+<div id="Tokyo" class="tabcontent">
+    <h3>Tokyo</h3>
+    <p>Tokyo is the capital of Japan.</p>
+</div>
 
 
-        //If login then sends request to server to update score
+<!-- Calls the function for the Games -->
+<script>
+    var Wins = 0;
+    var Loses = 0;
+    var Ties = 0;
 
-//End Game
-//End DivBox-->
+    function openGame(event, gameName) {
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+        }
+        tablinks = document.getElementsByClassName("tablinks");
+        for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+        document.getElementById(gameName).style.display = "block";
+        event.currentTarget.className += " active";
+
+    }
+    function RPS_display() {
+        var Display = '<h3>Rock Paper Scissor</h3><hr>';
+            Display += '<table >';
+            Display +='<tr>';
+
+            Display +='<td style="float: left;">';
+            Display +='<div>';
+            Display +='<h4>Score</h4><br>';
+            Display +=`<p>Wins: ${Wins}</p>`;
+            Display +=`<p>Loses: ${Loses}</p>`;
+            Display +=`<p>Ties: ${Ties}</p>`;
+            Display +='</div>';
+            Display +='</td>';
+        
+            Display +='<td style="float: right;border: 1px solid black;margin-left: 20px;margin-right: auto;">';
+            Display +='<div style="border: solid">';
+            Display +='<img src="./../Pictures/scissor.png" alt=Scissor onclick=RPS_Game("Scissor")>';
+            Display +='</div>';
+            Display +='Scissor';
+            Display +='</td>';
+
+            Display +='<td style="float: right;border: 1px solid black;margin-left: 20px;margin-right: auto;">';
+            Display +='<div style="border: solid">';
+            Display +='<img src="./../Pictures/paper.png" alt=Paper onclick=RPS_Game("Paper")>';
+            Display +='</div>';
+            Display +='Paper';
+            Display +='</td>';
+
+            Display +='<td style="float: right;border: 1px solid black;margin-left: 120px;margin-right: auto;">';
+            Display +='<div style="border: solid">';
+            Display +='<img src="./../Pictures/rock.png" alt=Rock onclick=RPS_Game("Rock")>';
+            Display +='</div>';
+            Display +='Rock';
+            Display +='</td>';
+
+            Display +='</tr>';
+            Display +='</table>';
+
+
+        document.getElementById("RPS").innerHTML = Display;
+
+    }
+
+    function RPS_Game(PlayerChoice){
+
+        var Computer = Math.floor((Math.random() * 3) + 1);
+        var ComputerChoice;
+
+        if(Computer == 1){
+            ComputerChoice = "Rock";
+
+        }else if(Computer == 2){
+            ComputerChoice = "Paper";
+
+        }else{
+            ComputerChoice = "Scissor";
+        }
+
+        if(PlayerChoice == ComputerChoice){
+            alert("Tie");
+            Ties += 1;
+
+        }else if(PlayerChoice == "Rock" && ComputerChoice == "Scissor"){
+            alert("You win");
+            Wins += 1;
+
+        }else if(PlayerChoice == "Paper" && ComputerChoice == "Rock"){
+            alert("You win");
+            Wins += 1;
+
+        }else if(PlayerChoice == "Scissor" && ComputerChoice == "Paper"){
+            alert("You win");
+            Wins += 1;
+
+        }else{
+            alert("You lose");
+            Loses += 1;
+        }
+
+        RPS_display();
+    }
+
+    RPS_display();
+</script>
 
 
 <!-- Calls the function for the Bars -->
-<script src="../Universal/Nav-Bottom-Bar.js">
+<script src="./../Universal/Nav-Bottom-Bar.js">
+
 
 </script>
+
 
 
 <footer id="BottomBar">
