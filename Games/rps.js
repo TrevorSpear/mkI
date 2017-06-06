@@ -2,34 +2,46 @@
  * Created by TrevorSpear on 5/26/17.
  */
 
+var Wins = 0;
+var Loses = 0;
+var Ties = 0;
 
-export function RPS_display() {
+function RPS_display() {
     var Display = '<h3>Rock Paper Scissor</h3><hr>';
-        Display += '<table>';
-            Display +='<tr>';
+        Display += '<table >';
+        Display +='<tr>';
 
-                Display +='<td>';
-                    Display +='<div>';
-                        Display +='<img src="./../Pictures/rock.png" alt=Rock onclick=RPS_Game("Rock")>';
-                    Display +='</div>';
-                    Display +='Rock';
-                Display +='</td>';
+        Display +='<td style="float: left;">';
+        Display +='<div>';
+        Display +='<h4>Score</h4><br>';
+        Display +=`<p>Wins: ${Wins}</p>`;
+        Display +=`<p>Loses: ${Loses}</p>`;
+        Display +=`<p>Ties: ${Ties}</p>`;
+        Display +='</div>';
+        Display +='</td>';
 
-                Display +='<td>';
-                    Display +='<div>';
-                        Display +='<img src="./../Pictures/paper.png" alt=Paper onclick=RPS_Game("Paper")>';
-                    Display +='</div>';
-                    Display +='Paper';
-                Display +='</td>';
+        Display +='<td style="float: right;border: 1px solid black;margin-left: 20px;margin-right: auto;">';
+        Display +='<div style="border: solid">';
+        Display +='<img src="./../Pictures/scissor.png" alt=Scissor onclick=RPS_Game("Scissor")>';
+        Display +='</div>';
+        Display +='Scissor';
+        Display +='</td>';
 
-                Display +='<td>';
-                    Display +='<div>';
-                        Display +='<img src="./../Pictures/scissor.png" alt=Scissor onclick=RPS_Game("Scissor")>';
-                    Display +='</div>';
-                    Display +='Scissor';
-                Display +='</td>';
+        Display +='<td style="float: right;border: 1px solid black;margin-left: 20px;margin-right: auto;">';
+        Display +='<div style="border: solid">';
+        Display +='<img src="./../Pictures/paper.png" alt=Paper onclick=RPS_Game("Paper")>';
+        Display +='</div>';
+        Display +='Paper';
+        Display +='</td>';
 
-            Display +='</tr>';
+        Display +='<td style="float: right;border: 1px solid black;margin-left: 120px;margin-right: auto;">';
+        Display +='<div style="border: solid">';
+        Display +='<img src="./../Pictures/rock.png" alt=Rock onclick=RPS_Game("Rock")>';
+        Display +='</div>';
+        Display +='Rock';
+        Display +='</td>';
+
+        Display +='</tr>';
         Display +='</table>';
 
 
@@ -37,7 +49,7 @@ export function RPS_display() {
 
 }
 
-export function RPS_Game(PlayerChoice){
+function RPS_Game(PlayerChoice){
     //Bet = document.getElementById("Betting").value;
 
     //if(Number(Bet) <= PlayerMoney && Number(Bet) > 0){
@@ -57,40 +69,25 @@ export function RPS_Game(PlayerChoice){
 
         if(PlayerChoice == ComputerChoice){
             alert("Tie");
-            //Tie += 1;
+            Ties++;
 
         }else if(PlayerChoice == "Rock" && ComputerChoice == "Scissor"){
             alert("You win");
-            //c = PlayerMoney + Number(Bet);
-            //PlayerMoney = c;
-            //Win += 1;
-            //document.getElementById("Outcome").innerHTML =  "Player Win";
+            Wins++;
 
         }else if(PlayerChoice == "Paper" && ComputerChoice == "Rock"){
             alert("You win");
-            //PlayerMoney = PlayerMoney + Number(Bet);
-            //Win += 1;
-            //document.getElementById("Outcome").innerHTML =  "Player Win";
+            Wins++;
 
         }else if(PlayerChoice == "Scissor" && ComputerChoice == "Paper"){
             alert("You win");
-            //PlayerMoney += Number(Bet);
-            //Win += 1;
-            //document.getElementById("Outcome").innerHTML =  "Player Win";
+            Wins++;
 
         }else{
             alert("You lose");
-            //PlayerMoney = PlayerMoney - Number(Bet);
-            //Loses += 1;
-            //document.getElementById("Outcome").innerHTML =  "Computer Win";
+            Loses++;
         }
-    alert("OOPS");
 
-        //CurrentMoney();
-
-        //document.getElementById("Answer").innerHTML =  PlayerChoice + " vs " + ComputerChoice;
-    //}else{
-      //  alert("Bets need to be more than 0 and less than the Player's money");
-    //}
+        RPS_display();
 }
 

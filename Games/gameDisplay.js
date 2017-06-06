@@ -2,6 +2,10 @@
  * Created by TrevorSpear on 5/30/17.
  */
 
+window.onload = function openFame() {
+    alert("fuck");
+};
+
 function openGame(event, gameName) {
     var i, tabcontent, tablinks;
     tabcontent = document.getElementsByClassName("tabcontent");
@@ -14,11 +18,4 @@ function openGame(event, gameName) {
     }
     document.getElementById(gameName).style.display = "block";
     event.currentTarget.className += " active";
-
-}
-
-function makeGames(){
-    import {RPS_display} from 'rps';
-    RPS_display();
-    alert("OOPS");
 }
